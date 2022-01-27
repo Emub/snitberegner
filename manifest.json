@@ -1,0 +1,14 @@
+{
+  "name": "Snitberegner",
+  "description": "Denne chrome-udvidelse beregner et ECTS-vægtet gennemsnit og tilføjer linjen til resultat-siden på studenterselvbetjeningen.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["tabs", "*://selvbprod.sdu.dk/prod/sb/resultater/studresultater.jsp"],
+  "content_scripts": [
+    {
+      "matches": ["*://selvbprod.sdu.dk/prod/sb/resultater/studresultater.jsp"],
+      "js": ["snit.js"],
+      "css": ["snit.css"]
+    }
+  ]
+}
