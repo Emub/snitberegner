@@ -17,7 +17,8 @@ init = function(){
         if(element.getAttribute("class").indexOf("childRow") == -1){
 
             // Check om resultatet er et tal (Alternativ er bestået/ikke bestået)
-            if(!isNaN(parseInt(element.children[element.children.length - 3].innerHTML))){
+            // Check også om faget er bestået for at tælle det med
+            if(!isNaN(parseInt(element.children[element.children.length - 3].innerHTML)) && parseInt(element.children[element.children.length - 3].innerHTML) >= 2){
                 grades.push({
                     ECTS: parseInt(element.children[element.children.length - 1].innerHTML),
                     res: parseInt(element.children[element.children.length - 3].innerHTML)
